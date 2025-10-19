@@ -65,5 +65,5 @@ const server = http.createServer(async (req, res) => {
 
 // === 8. Запускаємо сервер ===
 server.listen(options.port, options.host, () => {
-  console.log(`✅ Server running at http://${options.host}:${options.port}`);
+  console.log(`Server running at http://${options.host}:${options.port}`);
 });
