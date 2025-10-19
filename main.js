@@ -1,21 +1,21 @@
-// === Імпорт потрібних модулів ===
-import fs from "fs/promises";        // Для асинхронного читання файлів
-import http from "http";             // Для створення HTTP сервера
-import { Command } from "commander"; // Для зчитування аргументів командного рядка
-import { XMLBuilder } from "fast-xml-parser"; // Для перетворення JSON → XML
+// === 1. Імпортуємо модулі ===
+import fs from "fs/promises";
+import http from "http";
+import { Command } from "commander";
+import { XMLBuilder } from "fast-xml-parser";
 
-// === Налаштовуємо командний рядок ===
+// === 2. Налаштування командного рядка ===
 const program = new Command();
 
 program
-  .requiredOption("-i, --input <path>", "Path to input JSON file") // шлях до файлу
-  .requiredOption("-h, --host <host>", "Host for the server")       // хост
-  .requiredOption("-p, --port <port>", "Port for the server");      // порт
+  .requiredOption("-i, --input <path>", "Path to input JSON file")
+  .requiredOption("-h, --host <host>", "Host for the server")
+  .requiredOption("-p, --port <port>", "Port for the server");
 
 program.parse(process.argv);
-const options = program.opts(); // отримуємо введені параметри
+const options = program.opts();
 
-// === Створюємо HTTP сервер ===
+// === 3. Створюємо сервер ===
 const server = http.createServer(async (req, res) => {
   try {
     // --- 1. Читаємо JSON файл ---
@@ -23,7 +23,7 @@ const server = http.createServer(async (req, res) => {
     const cars = data
       .trim()
       .split("\n")
-      .map(line => JSON.parse(line)); // кожен рядок окремий JSON-об'єкт
+      .map(line => JSON.parse(line));
 
     // --- 2. Зчитуємо параметри з URL ---
     const url = new URL(req.url, `http://${options.host}:${options.port}`);
@@ -47,12 +47,15 @@ const server = http.createServer(async (req, res) => {
     const builder = new XMLBuilder({ format: true });
     const xmlData = builder.build({ cars: { car: result } });
 
-    // --- 6. Відправляємо XML-відповідь ---
+    // --- 6. Відправляємо XML-відповідь клієнту ---
     res.writeHead(200, { "Content-Type": "application/xml" });
     res.end(xmlData);
 
+    // --- 7. Записуємо XML у файл (writeFile) ---
+    await fs.writeFile("last_response.xml", xmlData, "utf-8");
+    console.log("last_response.xml was updated.");
+
   } catch (error) {
-    // --- 7. Обробка помилок ---
     if (error.code === "ENOENT") {
       res.writeHead(404, { "Content-Type": "text/plain" });
       res.end("Cannot find input file");
@@ -63,7 +66,7 @@ const server = http.createServer(async (req, res) => {
   }
 });
 
-// === 8. Запускаємо сервер ===
+// === 4. Запускаємо сервер ===
 server.listen(options.port, options.host, () => {
   console.log(`Server running at http://${options.host}:${options.port}`);
 });
