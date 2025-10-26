@@ -1,0 +1,130 @@
+<cars>
+  <car>
+    <model>Mazda RX4</model>
+    <mpg>21</mpg>
+  </car>
+  <car>
+    <model>Mazda RX4 Wag</model>
+    <mpg>21</mpg>
+  </car>
+  <car>
+    <model>Datsun 710</model>
+    <mpg>22.8</mpg>
+  </car>
+  <car>
+    <model>Hornet 4 Drive</model>
+    <mpg>21.4</mpg>
+  </car>
+  <car>
+    <model>Hornet Sportabout</model>
+    <mpg>18.7</mpg>
+  </car>
+  <car>
+    <model>Valiant</model>
+    <mpg>18.1</mpg>
+  </car>
+  <car>
+    <model>Duster 360</model>
+    <mpg>14.3</mpg>
+  </car>
+  <car>
+    <model>Merc 240D</model>
+    <mpg>24.4</mpg>
+  </car>
+  <car>
+    <model>Merc 230</model>
+    <mpg>22.8</mpg>
+  </car>
+  <car>
+    <model>Merc 280</model>
+    <mpg>19.2</mpg>
+  </car>
+  <car>
+    <model>Merc 280C</model>
+    <mpg>17.8</mpg>
+  </car>
+  <car>
+    <model>Merc 450SE</model>
+    <mpg>16.4</mpg>
+  </car>
+  <car>
+    <model>Merc 450SL</model>
+    <mpg>17.3</mpg>
+  </car>
+  <car>
+    <model>Merc 450SLC</model>
+    <mpg>15.2</mpg>
+  </car>
+  <car>
+    <model>Cadillac Fleetwood</model>
+    <mpg>10.4</mpg>
+  </car>
+  <car>
+    <model>Lincoln Continental</model>
+    <mpg>10.4</mpg>
+  </car>
+  <car>
+    <model>Chrysler Imperial</model>
+    <mpg>14.7</mpg>
+  </car>
+  <car>
+    <model>Fiat 128</model>
+    <mpg>32.4</mpg>
+  </car>
+  <car>
+    <model>Honda Civic</model>
+    <mpg>30.4</mpg>
+  </car>
+  <car>
+    <model>Toyota Corolla</model>
+    <mpg>33.9</mpg>
+  </car>
+  <car>
+    <model>Toyota Corona</model>
+    <mpg>21.5</mpg>
+  </car>
+  <car>
+    <model>Dodge Challenger</model>
+    <mpg>15.5</mpg>
+  </car>
+  <car>
+    <model>AMC Javelin</model>
+    <mpg>15.2</mpg>
+  </car>
+  <car>
+    <model>Camaro Z28</model>
+    <mpg>13.3</mpg>
+  </car>
+  <car>
+    <model>Pontiac Firebird</model>
+    <mpg>19.2</mpg>
+  </car>
+  <car>
+    <model>Fiat X1-9</model>
+    <mpg>27.3</mpg>
+  </car>
+  <car>
+    <model>Porsche 914-2</model>
+    <mpg>26</mpg>
+  </car>
+  <car>
+    <model>Lotus Europa</model>
+    <mpg>30.4</mpg>
+  </car>
+  <car>
+    <model>Ford Pantera L</model>
+    <mpg>15.8</mpg>
+  </car>
+  <car>
+    <model>Ferrari Dino</model>
+    <mpg>19.7</mpg>
+  </car>
+  <car>
+    <model>Maserati Bora</model>
+    <mpg>15</mpg>
+  </car>
+  <car>
+    <model>Volvo 142E</model>
+    <mpg>21.4</mpg>
+  </car>
+</cars>
